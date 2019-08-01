@@ -13,24 +13,22 @@ export default new Vuex.Store({
     ]
   },
   getters: {
-    countLinks: state => {
-      return state.links.length
-    }
+    countLinks: state => state.links.length
   },
   mutations: {
-    ADD_LINK: (state, link) => {
+    ADD_LINK (state, link) {
       state.links.push(link)
     },
-    REMOVE_LINK: (state, link) => {
+    REMOVE_LINK (state, link) {
       state.links.splice(link, 1)
     },
-    REMOVE_ALL: (state) => {
+    REMOVE_ALL (state) {
       state.links = []
     }
   },
   actions: {
-    removeLink: (context, link) => {
-      context.commit("REMOVE_LINK", link)
+    removeLink (context, link) {
+      context.commit('REMOVE_LINK', link)
     },
     removeAll ({commit}) {  // this is called "argument destructuring"
       return new Promise((resolve, reject) => {
