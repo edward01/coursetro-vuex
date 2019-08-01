@@ -12,6 +12,11 @@ export default new Vuex.Store({
       'http://youtube.com'
     ]
   },
+  getters: {
+    countLinks: state => {
+      return state.links.length
+    }
+  },
   mutations: {
     ADD_LINK: (state, link) => {
       state.links.push(link)
@@ -21,11 +26,6 @@ export default new Vuex.Store({
     },
     REMOVE_ALL: (state) => {
       state.links = []
-    }
-  },
-  getters: {
-    countLinks: state => {
-      return state.links.length
     }
   },
   actions: {
