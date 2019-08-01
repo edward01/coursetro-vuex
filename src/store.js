@@ -32,7 +32,7 @@ export default new Vuex.Store({
     removeLink: (context, link) => {
       context.commit("REMOVE_LINK", link)
     },
-    removeAll ({commit}) {
+    removeAll ({commit}) {  // this is called "argument destructuring"
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           commit('REMOVE_ALL')
